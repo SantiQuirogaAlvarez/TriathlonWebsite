@@ -1,16 +1,19 @@
 ---
-
+import Header from "../Components/Header.astro";
+import Footer from "../Components/Footer.astro";
+import "../styles/global.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>CU Triathalon Club</title>
+  </head>
+  <body class="bg-(--light_gray) text-(--black)">
+    <Header />
 	<body>
-		<h1>Astro</h1>
+		Testing site words
 	</body>
+    <Footer/>
+  </body>
 </html>

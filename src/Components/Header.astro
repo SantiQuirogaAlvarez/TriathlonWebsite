@@ -1,0 +1,68 @@
+---
+---
+
+<header class="sticky top-0 z-20 shadow-sm">
+  <div class = "w-full bg-black text-white">
+    <nav class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center py-3 bg-black">
+        <div class="relative">
+          <button
+            id="hamburgerBtn"
+            aria-label="Toggle menu"
+            class="flex flex-col justify-center items-center gap-1.5 p-2 rounded focus:outline-none focus:ring-2 focus:ring-(--gold) z-50 relative"
+          >
+            <span class="block w-6 h-0.5 bg-(--gold)"></span>
+            <span class="block w-6 h-0.5 bg-(--gold)"></span>
+            <span class="block w-6 h-0.5 bg-(--gold)"></span>
+          </button>
+
+          <div
+            id="sidebar"
+            class="fixed top-0 left-0 w-64 h-full bg-(--dark_gray) transform -translate-x-full transition-transform duration-300 shadow-lg z-40"
+          >
+            <div class="p-6 flex flex-col h-full">
+              <h2 class="text-xl font-bold mb-6 text-(--gold)">Menu</h2>
+              <ul class="flex flex-col gap-4 text-(--gold) text-lg">
+                <li><a href="#" class="hover:text-(--blue) transition-colors">Filler 1</a></li>
+                <li><a href="#" class="hover:text-(--blue) transition-colors">Filler 2</a></li>
+                <li><a href="#" class="hover:text-(--blue) transition-colors">Filler 3</a></li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+        <script>
+          const hamburgerBtn = document.getElementById("hamburgerBtn");
+          const sidebar = document.getElementById("sidebar");
+
+          if (hamburgerBtn && sidebar) {
+            hamburgerBtn.addEventListener("click", () => {
+              sidebar.classList.toggle("-translate-x-full"); 
+            });
+          }
+        </script>
+        <div class="ml-3">
+          <span class="text-3xl font-medium text-(--white)">University of Colorado <b>Boulder</b></span>
+        </div>
+
+        <div class="flex-1"></div>
+      </div>
+    </div>
+    <div class = "w-full bg-(--dark_gray) text-(--gold)">
+      <nav class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
+
+        <div class="flex items-center">
+          <h1 class="text-xl font-bold">University Triathlon Team</h1>
+        </div>
+
+
+        <ul class="flex items-center gap-6 text-lg">
+          <li><a href="/about" class="hover:text-(--blue) transition-colors">About</a></li>
+          <li><a href="/faq" class="hover:text-(--blue) transition-colors">FAQ</a></li>
+          <li><a href="/join" class="hover:text-(--blue) transition-colors">Become a Member</a></li>
+        </ul>
+      </nav>
+    </div>
+  </nav>
+</header>
