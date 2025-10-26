@@ -2,6 +2,7 @@
 import Header from "../Components/Header.astro";
 import Footer from "../Components/Footer.astro";
 import Slideshow from "../Components/Slideshow.astro"
+import CardSection from "../Components/CardSection.astro";
 import "../styles/global.css";
 ---
 
@@ -12,6 +13,8 @@ import "../styles/global.css";
   </head>
     <Header />
     <Slideshow/>
+
+    <!-- Who we are and mission statement section -->
     <section class="w-full min-h-screen flex flex-col justify-center items-center text-center px-8 py-20" style="background: linear-gradient(180deg, var(--black) 0%, var(--dark_gray) 100%); color: var(--white);">
       <div class="max-w-5xl">
         <h2
@@ -42,5 +45,9 @@ import "../styles/global.css";
         </p>
       </div>
     </section>
+
+    <CardSection/>
+
+
     <Footer/>
 </html>

@@ -1,0 +1,76 @@
+---
+const cards = [
+  {
+    title: "Item 1",
+    description:
+      "Description on Item 1 that says some stuff that we don't know what it is yet",
+    image: "https://www.snowypineswhitelabs.com/wp-content/uploads/2020/03/image2.jpg",
+    link: "/Item1",
+  },
+  {
+    title: "Item 2",
+    description:
+        "Description on Item 2 that says some stuff that we don't know what it is yet",
+    image: "https://www.snowypineswhitelabs.com/wp-content/uploads/2020/03/image2.jpg",
+    link: "/Item2",
+  },
+  {
+    title: "Item 3",
+    description:
+        "Description on Item 3 that says some stuff that we don't know what it is yet",
+    image: "https://www.snowypineswhitelabs.com/wp-content/uploads/2020/03/image2.jpg",
+    link: "/Item3",
+  },
+  {
+    title: "Item 4",
+    description:
+        "Description on Item 4 that says some stuff that we don't know what it is yet",
+    image: "https://www.snowypineswhitelabs.com/wp-content/uploads/2020/03/image2.jpg",
+    link: "/Item4",
+  },
+];
+---
+
+<section
+  class="w-full py-24 px-8 bg-(--black) text-(--white)"
+>
+  <div class="max-w-7xl mx-auto text-center mb-16">
+    <h2 class="text-4xl md:text-6xl font-bold mb-6" style="color: var(--gold);">
+      Card Section with Stuff
+    </h2>
+    <p class="text-lg md:text-xl text-(--light_gray) max-w-3xl mx-auto">
+        Discover more about the club.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+    {cards.map(card => (
+      <a
+        href={card.link}
+        class="group relative bg-(--dark_gray) rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+      >
+        <div class="h-48 w-full overflow-hidden">
+          <img
+            src={card.image}
+            alt={card.title}
+            class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        <div class="p-6 text-left">
+          <h3 class="text-2xl font-semibold mb-3" style="color: var(--gold);">
+            {card.title}
+          </h3>
+          <p class="text-(--light_gray) mb-6 text-base leading-relaxed">
+            {card.description}
+          </p>
+          <span
+            class="inline-block mt-auto text-(--gold) font-medium group-hover:underline"
+          >
+            Learn More →
+          </span>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
