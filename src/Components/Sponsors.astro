@@ -1,0 +1,51 @@
+---
+const sponsors = [
+  {
+    name: "Sponsor 1",
+    logo: "",
+    tagline: "Sponsor 1 text",
+  },
+  {
+    name: "Sponsor 2",
+    logo: "",
+    tagline: "Sponsor 2 text",
+  },
+  {
+    name: "Sponsor 3",
+    logo: "",
+    tagline: "Sponsor 3 text",
+  },
+  {
+    name: "Sponsor 4",
+    logo: "",
+    tagline: "Sponsor 4 text",
+  },
+];
+---
+
+<section
+  class="w-full py-20 px-8 flex flex-col items-center justify-center text-center border-t border-(--gold)"
+  style="background: linear-gradient(180deg, var(--white) 0%, var(--light_gray) 40%, var(--gold) 100%);"
+>
+  <h2 class="text-3xl md:text-5xl font-bold mb-12" style="color: var(--black);">
+    Our Sponsors
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 max-w-6xl w-full">
+    {sponsors.map(sponsor => (
+      <div class="flex flex-col items-center justify-center text-center">
+        <img
+          src={sponsor.logo}
+          alt={sponsor.name}
+          class="h-16 md:h-20 mb-4 opacity-90 hover:opacity-100 transition-opacity duration-300"
+        />
+        <p class="text-base md:text-lg">
+          <span style="color: var(--black); font-weight: 700;">{sponsor.name}</span>
+        </p>
+        <p class="text-sm text-(--black) mt-1 opacity-80">
+          {sponsor.tagline}
+        </p>
+      </div>
+    ))}
+  </div>
+</section>

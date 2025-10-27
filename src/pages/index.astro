@@ -1,19 +1,55 @@
 ---
 import Header from "../Components/Header.astro";
 import Footer from "../Components/Footer.astro";
+import Slideshow from "../Components/Slideshow.astro"
+import CardSection from "../Components/CardSection.astro";
+import Sponsors from "../Components/Sponsors.astro";
 import "../styles/global.css";
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>CU Triathalon Club</title>
+    <title>CU Triathlon Club</title>
   </head>
-  <body class="bg-(--light_gray) text-(--black)">
     <Header />
-	<body>
-		Testing site words
-	</body>
+    <Slideshow/>
+
+    <!-- Who we are and mission statement section -->
+    <section class="w-full min-h-screen flex flex-col justify-center items-center text-center px-8 py-20" style="background: linear-gradient(180deg, var(--black) 0%, var(--dark_gray) 100%); color: var(--white);">
+      <div class="max-w-5xl">
+        <h2
+          class="text-5xl md:text-7xl font-extrabold mb-8 tracking-wide"
+          style="color: var(--gold);"
+        >
+          Who We Are
+        </h2>
+
+        <p class="text-xl md:text-2xl leading-relaxed mb-16 text-(--light_gray)">
+          <span style="color: var(--gold); font-weight: 600;">CU Triathlon</span> is a team of athletes who all share the same love and passion for endurance sports, eating good food and having a fun time! We travel and race competitively against other club teams in the country and are 18-time National Champions. CU Triathlon is highly inclusive and we welcome athletes from all ranges of ability in the sport.
+
+        <div class="border-t border-(--gold) w-24 mx-auto mb-16"></div>
+
+        <h3
+          class="text-4xl md:text-5xl font-semibold mb-6"
+          style="color: var(--gold);"
+        >
+          Our Mission
+        </h3>
+
+        <p class="text-xl md:text-2xl leading-relaxed mb-12 text-(--light_gray)">
+          Maintain the inclusive and impactful CU Triathlon community of students, triathletes, and friends of all backgrounds so everyone can achieve both training and personal goals.
+        </p>
+
+        <p class="text-xl md:text-2xl leading-relaxed text-(--light_gray)">
+          Develop a love of triathlon and represent CU at competitions! We strive to focus on building healthy exercise habits and creating friendships that will last a lifetime &lt;3.
+        </p>
+      </div>
+    </section>
+
+    <CardSection/>
+
+    <Sponsors/>
+    
     <Footer/>
-  </body>
 </html>
