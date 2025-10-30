@@ -1,0 +1,264 @@
+---
+import Header from "../Components/Header.astro";
+import Footer from "../Components/Footer.astro";
+import "../styles/global.css";
+
+
+const coaches = [
+  {
+    name: "KJ Kroetch",
+    title: "Head Coach",
+    photo:"../../images/Coaches.png",
+    education: "Tufts University '13 Architecture and Art History with a minor in Medieval Studies",
+    yearsOnTeam: "2 years",
+    qa: [
+      { question: "Why KJ is cooler than everyone:", answer: "U.S. Masters Swimming 200 fly National Champion with a blazing time of 2:12:92" },
+      { question: "Favorite CU Tri Mem:", answer: "Beating Coach Dave in every team TT in the pool" },
+    ],
+  },
+  {
+    name: "Dave Sheanin",
+    title: "Assistant Coach",
+    photo:"../../images/Coaches.png",
+    education: "Undergrad UC Irvine ‘92,MBA CU Boulder ‘99",
+    yearsOnTeam: "So many",
+    qa: [
+      { question: "Cool Coach Dave Fact:", answer: "He taught his dogs to run on the treadmill & can beat all of you in transition" },
+      { question: "Future racing goal:", answer: "Running a sub 20’ 5k off the couch like Coach Ali" },
+    ],
+  },
+  {
+    name: "Ali O’Donnell",
+    title: "Volunteer Coach",
+    photo:"../../images/Coaches.png",
+    education: "CU Boulder ‘20 Integrative Physiology",
+    yearsOnTeam: "6 total → 4 racing (member of the 2017 National Champion Team) + 2 coaching",
+    qa: [
+      { question: "Greatest athletic achievement:", answer: "Running a sub 40’ 10k in a 🍌 suit" },
+      { question: "What did she learn this summer?", answer: "That chopped does not mean the same thing as cracked" },
+    ],
+  },
+];
+
+const leaders = [
+  {
+    name: "Parallel” Parker (P²)",
+    photo: "../../images/Coaches.png",
+    year: "Senior",
+    title: "President",
+    major: "Environmental Engineering",
+    hometown: "Evanston, IL",
+    threeWords: "Tri Buﬀalo Wrangler",
+    qa: [
+      { question: "What would a “Rosenthalio” pasta look like?", answer: "Would be shaped like a paper crane" },
+      { question: "How much Icky do you toss in a La Boomba?", answer: "Approximately nine minivans worth" },
+    ],
+  },
+  {
+    name: "Zack “Italics” Wojtalik",
+    photo: "../../images/Coaches.png",
+    year: "Junior",
+    title: "Vice President",
+    major: "Aerospace Engineering",
+    hometown: "Louisville, CO",
+    threeWords: "Big vibes guy",
+    qa: [
+      { question: "A skill you wish you had:", answer: "Narwhal jousting" },
+      { question: "In your darkest hour you pray to:", answer: "Crush the turtle" },
+    ],
+  },
+  {
+    name: "Maya NussBOMB",
+    photo: "../../images/Coaches.png",
+    year: "Wouldn’t you like to know (5th)",
+    title: "Treasurer",
+    major: "MCDB, ASTR",
+    hometown: "Denver, CO",
+    threeWords: "Team sugar mommy",
+    qa: [
+      { question: "Advice for new members (you should definitely do this):", answer: "Letting air out of your tires saves you weight on the bike so you go faster! Trust me I can do physics and also math." },
+      { question: "If I could bring 5 items on a deserted island I would bring:", answer: "My bike, my other bike, a helmet, president parker, bean and cheese quesadilla" },
+    ],
+  },
+  {
+    name: "Max “Seed” Hemsky",
+    photo: "../../images/Coaches.png",
+    year: "Third year at CU (first-year grad student)",
+    title: "Travel Logistics",
+    major: "Math -> MS Finance",
+    hometown: "Littleton, CO",
+    threeWords: "Eﬀectively manage chaos",
+    qa: [
+      { question: "What are the vibes rn:", answer: "Sky high" },
+      { question: "What’s the worst nightmare you’ve had in the past year? ", answer: "Spending an extra night in Flagstaﬀ during Havasu 2026" },
+    ],
+  },
+  {
+    name: "Mike (mikey t) Wawrzyn",
+    photo: "../../images/Coaches.png",
+    year: "Junior",
+    title: "Fundraising",
+    major: "Environmental Engineering",
+    hometown: "Delafield, WI",
+    threeWords: "Email, Money, Vibes",
+    qa: [
+      { question: "How many hot dogs are you eating in a typical day?", answer: "close to 0" },
+      { question: "What would Joey Chestnut think?", answer: "Yeah probably" },
+    ],
+  },
+  {
+    name: "Brody “The Omnipotent” Rosch",
+    photo: "../../images/Coaches.png",
+    year: "Sophomore",
+    title: "Apparel",
+    major: "Mechanical Engineering",
+    hometown: "Evergreen, CO",
+    threeWords: "Drip til drown",
+    qa: [
+      { question: "Canadian tuxedo?", answer: "Mmm yes please" },
+      { question: "Is the speedometer broken?", answer: "It was but its good (for now)" },
+    ],
+  },
+  {
+    name: "Aiden",
+    photo: "../../images/Coaches.png",
+    year: "Sophomore",
+    title: "Sponsorship",
+    major: "Mechanical Engineering",
+    hometown: "Longmont, CO",
+    threeWords: "Corporate Charm Machine",
+    qa: [
+      { question: "How many clowns can fit in a clowncar?", answer: "Unspeakable amount" },
+      { question: "Favorite model of razor scooter?", answer: "Razor A3 Kick Scooter - Red" },
+    ],
+  },
+  {
+    name: "Caleb (Film-man) Folman",
+    photo: "../../images/Coaches.png",
+    year: "2nd",
+    title: "Marketing",
+    major: "Integrative Physiology",
+    hometown: "Arvada, CO",
+    threeWords: "Instagram Dump Extraordinaire",
+    qa: [
+      { question: "In 30 years are you rocking the phone holster?", answer: "Rocking it likes its the best invention since cheez-its dipped in peanut butter" },
+      { question: "Best place to be at 1:22 on a Wednesday afternoon?", answer: "Taking the fattest nap since last Wednesday afternoon at 1:22" },
+    ],
+  },
+  {
+    name: "Viktors “The Latvian Lightning” Kalnins",
+    photo: "../../images/Coaches.png",
+    year: "Senior",
+    title: "Workout Coordinator",
+    major: "Integrated Physiology",
+    hometown: "Portage, MI",
+    threeWords: "Get you loose",
+    qa: [
+      { question: "Who would win in a fight between you and a bicycle:", answer: "Lime scooter" },
+      { question: "What is the meaning of life?", answer: "Lowballing people on Facebook marketplace" },
+    ],
+  },
+  {
+    name: "James Kilgoré (kill-gore-ayy)",
+    photo: "../../images/Coaches.png",
+    year: "Senioré",
+    title: "Board Advisor",
+    major: "Business Analytics and Information Management",
+    hometown: "Kennesaw, GA",
+    threeWords: "Team Mischief Manager",
+    qa: [
+      { question: "If you could guide people at something, what activity would it be?", answer: "Rafting" },
+      { question: "Are you a chill RA?", answer: "No. Anyone in Cheyenne Arapaho 2nd floor should keep a low profile." },
+    ],
+  },
+];
+
+---
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CU Triathlon Club</title>
+  </head>
+    <Header />
+
+  <!-- Coaches Section -->
+  <main class="max-w-7xl mx-auto px-4 py-16 space-y-28">
+
+    <!-- Coaches Section -->
+    <section id="coaches">
+        <h2 class="text-4xl font-bold mb-12 text-center text-(--gold)">Coaches</h2>
+
+        <div class="flex flex-col items-center gap-12">
+        {coaches.map((coach) => (
+            <div class="bg-(--light_gray) border border-(--gold) rounded-2xl p-8 text-center max-w-md w-full mx-auto shadow-md">
+            <img
+                src={coach.photo}
+                alt={coach.name}
+                class="w-44 h-44 mx-auto rounded-full object-cover mb-6 border-4 border-(--gold)"
+            />
+
+            <h3 class="text-2xl font-bold text-(--gold) mb-1">{coach.name}</h3>
+            <p class="text-(--dark_gray) font-semibold mb-4">{coach.title}</p>
+            <div class="space-y-2">
+                <p class="text-sm"><strong>Education:</strong> {coach.education}</p>
+                <p class="text-sm mb-4"><strong>Years on Team:</strong> {coach.yearsOnTeam}</p>
+            </div>
+
+            <div class="text-sm space-y-4 text-(--dark_gray)">
+                {coach.qa?.map((item) => (
+                <p>
+                    <strong class="text-(--gold)">{item.question}</strong><br />
+                    {item.answer}
+                </p>
+                ))}
+            </div>
+            </div>
+        ))}
+        </div>
+    </section>
+
+    <!-- Team Leadership Section -->
+    <section id="leadership">
+        <h2 class="text-4xl font-bold mb-12 text-center text-(--gold)">Team Leadership</h2>
+
+        <div class="flex flex-col items-center gap-12">
+        {leaders.map((leader) => (
+            <div class="bg-(--dark_gray) border border-(--gold) rounded-2xl p-8 text-center max-w-md w-full mx-auto shadow-md">
+            <img
+                src={leader.photo}
+                alt={leader.name}
+                class="w-44 h-44 mx-auto rounded-full object-cover mb-6 border-4 border-(--gold)"
+            />
+
+            <h3 class="text-2xl font-bold text-(--gold) mb-1">{leader.name}</h3>
+            <p class="text-(--dark-gray) font-semibold mb-4">{leader.title}</p>
+
+            <div class="space-y-2">
+                <p class="text-sm"><strong>Year:</strong> {leader.year}</p>
+                <p class="text-sm"><strong>Major:</strong> {leader.major}</p>
+                <p class="text-sm"><strong>Hometown:</strong> {leader.hometown}</p>
+                
+                <p class="text-sm mb-4"><strong>Describe your job in three words:</strong> <p class="text-(--gold)">{leader.threeWords}</p><br /></p>
+            </div>
+
+            <div class="text-sm space-y-4 text-(--dark-gray)">
+                {leader.qa?.map((item) => (
+                <p>
+                    <strong class="text-(--gold)">{item.question}</strong><br />
+                    {item.answer}
+                </p>
+                ))}
+            </div>
+            </div>
+        ))}
+        </div>
+    </section>
+
+
+    </main>
+    
+    <Footer/>
+</html>
