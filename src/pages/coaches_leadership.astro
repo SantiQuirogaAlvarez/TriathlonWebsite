@@ -234,9 +234,9 @@ const leaders = [
             />
 
             <h3 class="text-2xl font-bold text-(--gold) mb-1">{leader.name}</h3>
-            <p class="text-(--dark-gray) font-semibold mb-4">{leader.title}</p>
+            <p class="text-(--white) font-semibold mb-4">{leader.title}</p>
 
-            <div class="space-y-2">
+            <div class="space-y-2 text-(--white)">
                 <p class="text-sm"><strong>Year:</strong> {leader.year}</p>
                 <p class="text-sm"><strong>Major:</strong> {leader.major}</p>
                 <p class="text-sm"><strong>Hometown:</strong> {leader.hometown}</p>
@@ -246,7 +246,7 @@ const leaders = [
 
             <div class="text-sm space-y-4 text-(--dark-gray)">
                 {leader.qa?.map((item) => (
-                <p>
+                <p class = "text-(--white)">
                     <strong class="text-(--gold)">{item.question}</strong><br />
                     {item.answer}
                 </p>
