@@ -9,6 +9,6 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   site: "https://santiquirogaalvarez.github.io",
-  trailingSlash: "never",
-  base: "/TriathlonWebsite/",
+  trailingSlash: "ignore",
+  base: "/TriathlonWebsite",
 });
