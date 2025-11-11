@@ -8,5 +8,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  site: 'https://santiquirogaalvarez.github.io/TriathlonWebsite/'
+  site: "https://santiquirogaalvarez.github.io",
+  trailingSlash: "never",
+  base: "/TriathlonWebsite/",
 });
