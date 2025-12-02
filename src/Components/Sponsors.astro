@@ -3,27 +3,27 @@ const sponsors = [
   {
     name: "Roka",
     logo: "/TriathlonWebsite/sponsors/trek.svg",
-    tagline: "Sponsor 1 text",
+    tagline: "",
   },
   {
     name: "Trek",
     logo: "/TriathlonWebsite/sponsors/roka.svg",
-    tagline: "Sponsor 2 text",
+    tagline: "",
   },
   {
     name: "Garmin",
     logo: "/TriathlonWebsite/sponsors/garmin.svg",
-    tagline: "Sponsor 3 text",
+    tagline: "",
   },
   {
     name: "Strategic Fitting",
     logo: "/TriathlonWebsite/sponsors/strategicfitting.svg",
-    tagline: "Sponsor 4 text",
+    tagline: "",
   },
   {
     name: "Maurten",
     logo: "/TriathlonWebsite/sponsors/maurten.svg",
-    tagline: "Sponsor 5 text",
+    tagline: "",
   },
 ];
 ---
@@ -36,7 +36,8 @@ const sponsors = [
     Our Sponsors
   </h2>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 max-w-6xl w-full">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 max-w-6xl w-full">
+
     {sponsors.map(sponsor => (
       <div class="flex flex-col items-center justify-center text-center">
         <img
