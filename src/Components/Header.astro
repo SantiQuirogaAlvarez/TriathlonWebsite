@@ -20,13 +20,60 @@
             id="sidebar"
             class="fixed top-0 left-0 w-64 h-full bg-(--dark_gray) transform -translate-x-full transition-transform duration-300 shadow-lg z-40"
           >
+          
             <div class="p-6 flex flex-col h-full">
               <h2 class="text-xl font-bold mb-6 text-(--gold)">Menu</h2>
               <ul class="flex flex-col gap-4 text-(--gold) text-lg">
-                <li><a href="/TriathlonWebsite/#who-we-are" class="hover:text-(--blue) transition-colors">About</a></li>
-                <li><a href="/TriathlonWebsite/membership_info" class="hover:text-(--blue) transition-colors">Membership Info</a></li>
-                <li><a href="https://club.fusionfamily.com/@/cusportclubs/8b678ac9-1c52-443a-aaad-50892a1cb737" target="_blank" class="hover:text-(--blue) transition-colors">Join Our Team</a></li>
+
+                <!-- Parent Item -->
+                <li>
+                  <button onclick="toggleSubMenu(this)"
+                    class="w-full text-left flex justify-between items-center font-bold text-(--white) transition-colors">
+                    CU Sports
+                    <span class="text-sm">+</span>
+                  </button>
+
+                  <ul class="ml-4 mt-2 hidden flex-col gap-2 text-sm opacity-90">
+                    <li>
+                      <button onclick="toggleSubMenu(this)"
+                        class="w-full text-left flex justify-between font-bold text-(--white)">
+                        CU Clubs
+                        <span class="text-xs">+</span>
+                      </button>
+
+                      <ul class="ml-4 mt-1 hidden flex-col gap-1 text-xs opacity-80">
+                        <li class="font-bold text-(--white)">Cu Triathlon Club</li>
+                        <li>Other Club</li>
+                      </ul>
+                    </li>
+
+                    <li>another element</li>
+                  </ul>
+                </li>
+
+                <!-- Another Parent -->
+                <li>
+                  <button onclick="toggleSubMenu(this)"
+                    class="w-full text-left flex justify-between items-center hover:text-(--blue)">
+                    CU Academics
+                    <span class="text-sm">+</span>
+                  </button>
+
+                  <ul class="ml-4 mt-2 hidden flex-col gap-2 text-sm opacity-90">
+                    <li>filler 1</li>
+                    <li>test 123</li>
+                  </ul>
+                </li>
+
+                <!-- Normal Link -->
+                <li>
+                  <a class="hover:text-(--blue) transition-colors">
+                    CU Resources
+                  </a>
+                </li>
+
               </ul>
+
 
             </div>
           </div>
@@ -70,3 +117,23 @@
     </div>
   </nav>
 </header>
+
+
+
+<script>
+  declare global {
+    interface Window {
+      toggleSubMenu: (btn: HTMLElement) => void;
+    }
+  }
+
+  window.toggleSubMenu = function(btn) {
+    const submenu = btn.nextElementSibling;
+    const icon = btn.querySelector("span");
+
+    if (!submenu || !icon) return;
+
+    submenu.classList.toggle("hidden");
+    icon.textContent = submenu.classList.contains("hidden") ? "+" : "–";
+  }
+</script>
